@@ -1,20 +1,28 @@
-﻿using System;
+﻿using System; 
 
-namespace HelloWorld
+namespace CW1
 {
     class Program
     {
         static void Main(string[] args)
-        {   
-
+        {
             int Ans = 0, turn = 1;
             bool e = false;
+
+            Console.WriteLine("Pick the lowwer and upper limits to this game of Number Guesser.\nLower:");
+            string i = Console.ReadLine();
+            int low = Convert.ToInt32(i);
+
+            Console.WriteLine("Upper:");
+            string a = Console.ReadLine();
+            int high = Convert.ToInt32(a);
+
             Random rnd = new Random();
-            int num = rnd.Next(0, 100);
+            int num = rnd.Next(low, high);
 
             while (e == false)
             {
-                Console.WriteLine("I am thinking of a number between 0 and 100.");
+                Console.WriteLine("I am thinking of a number between " + low + " and " + high + ".");
                 string v = Console.ReadLine();
                 Ans = Convert.ToInt32(v);
 
@@ -40,6 +48,6 @@ namespace HelloWorld
             }
 
         }
-        
+
     }
 }
